@@ -3,6 +3,9 @@ Auto build OpenWrt firmware for Newifi D2 via GitHub Actions
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/cnbbx/OpenWrt-Newifi_D2?style=for-the-badge&label=Download)](https://github.com/cnbbx/OpenWrt-Newifi_D2/releases/latest)
 
+# 路由器使用说明
+路由器IP地址：192.168.2.1
+账号：root   密码：password
 
 # 安装的插件列表
 | 插件名称 | 插件说明 |
