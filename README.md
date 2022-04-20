@@ -24,4 +24,9 @@ Auto build OpenWrt firmware for Newifi D2 via GitHub Actions
 |  luci-app-udpxy    |  udpxy做组播服务器  |
 |  luci-app-usb-printer    |   USB 打印服务器  |
 |  luci-app-wifischedule    |  WiFi 计划   |
+|  Turbo ACC  |  网络加速设置  |
 |  ipv6helper  |  支持 iPv6  |
+|  DDNS  |  支持  |
+|  KMS  |  支持  |
+|  UDP  |  支持  |
+|  FTP  |  支持  |
