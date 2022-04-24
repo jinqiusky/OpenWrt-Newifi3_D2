@@ -20,6 +20,9 @@ sed -i "s/OpenWrt /cnbbx build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packag
 sed -i 's/luci-theme-bootstrap/luci-theme-argonne/g' feeds/luci/collections/luci/Makefile
 sed -i 's/bootstrap/argonne/g' feeds/luci/modules/luci-base/root/etc/config/luci
 
+# Modify aria2
+sed -i 's/+ariang//g'  feeds/luci/applications/luci-app-aria2/Makefile
+
 # Add kernel build user
 [ -z $(grep "CONFIG_KERNEL_BUILD_USER=" .config) ] &&
     echo 'CONFIG_KERNEL_BUILD_USER="cnbbx"' >>.config ||
