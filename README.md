@@ -14,6 +14,7 @@ Auto build OpenWrt firmware for Newifi D2 via GitHub Actions
 |  luci-app-accesscontrol  |  访问时间控制  |
 |  luci-app-filetransfer  |  文件传输（可web安装ipk包）  |
 |  luci-app-firewall  |  添加防火墙  |
+|  luci-app-alist  |  alist私人网盘  |
 |  luci-app-nlbwmon  |  网络带宽监视器  |
 |  luci-app-adbyby-plus    |   广告屏蔽大师Plus +  |
 |  luci-app-argonne-config    |  argonne主题设置  |
