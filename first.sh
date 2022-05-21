@@ -10,4 +10,4 @@ sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf
 
 sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 
-git clone https://github.com/zhoujinshi/openwrt-alist.git --depth=1 package/openwrt-alist
+sed -i '$a src-git mepackages https://github.com/zhoujinshi/luci-packages' feeds.conf.default
