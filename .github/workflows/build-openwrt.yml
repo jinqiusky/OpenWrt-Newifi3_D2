@@ -9,7 +9,7 @@ name: Build OpenWrt
 
 env:
   REPO_URL: https://github.com/cnbbx/openwrt
-  REPO_BRANCH: master
+  REPO_BRANCH: openwrt-22.03
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: open.config
   DIY_P1_SH: first.sh
