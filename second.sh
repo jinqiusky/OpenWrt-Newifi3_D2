@@ -20,22 +20,31 @@ sed -i '/set wireless.radio${devidx}.disabled/d' package/kernel/mac80211/files/l
 sed -i 's/luci-theme-bootstrap/luci-theme-argonne/g' feeds/luci/collections/luci/Makefile
 sed -i 's/bootstrap/argonne/g' feeds/luci/modules/luci-base/root/etc/config/luci
 
-# Modify aria2
+# Modify Packages
 sed -i 's/+ariang//g'  feeds/luci/applications/luci-app-aria2/Makefile
+sed -i 's/+alist//g'  feeds/luciPackages/applications/luci-app-alist/Makefile
 
 # Rom Size
 echo '# Rom Size' >> .config
-echo 'CONFIG_TARGET_KERNEL_PARTSIZE=64' >> .config
-echo 'CONFIG_TARGET_ROOTFS_PARTSIZE=800' >> .config
+echo 'CONFIG_TARGET_KERNEL_PARTSIZE=16' >> .config
+echo 'CONFIG_TARGET_ROOTFS_PARTSIZE=32' >> .config
 
 # Modify the version number
+sed -i '/CONFIG_IMAGEOPT/d' .config
+sed -i '/CONFIG_VERSIONOPT/d' .config
+sed -i '/CONFIG_VERSION_DIST/d' .config
+sed -i '/CONFIG_VERSION_NUMBER/d' .config
+sed -i '/CONFIG_VERSION_CODE/d' .config
+sed -i '/CONFIG_VERSION_HOME_URL/d' .config
 echo '# Image Configurations' >> .config
 echo 'CONFIG_IMAGEOPT=y' >> .config
 echo 'CONFIG_VERSIONOPT=y' >> .config
-echo "CONFIG_VERSION_NUMBER='Cnbbx build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt R22.03'" >> .config
 echo 'CONFIG_VERSION_DIST="Cnbbx"' >> .config
-echo 'CONFIG_VERSION_FILENAMES=y' >> .config
+echo 'CONFIG_VERSION_NUMBER="R22.03"' >> .config
+echo "CONFIG_VERSION_CODE=\"build $(TZ=UTC-8 date "+%Y.%m.%d")"\" >> .config
 echo 'CONFIG_VERSION_HOME_URL="http://youku.i.cnbbx.com/"' >> .config
+
+sed -i 's/not//g'  feeds/luci/modules/luci-base/src/mkversion.sh
 
 # Add kernel build user
 [ -z $(grep "CONFIG_KERNEL_BUILD_USER=" .config) ] &&
